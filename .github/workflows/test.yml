@@ -1,0 +1,13 @@
+name: 'CI'
+on:
+  push:
+    paths-ignore:
+    - '**.md'
+    - '**.org'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: cachix/install-nix-action@v10
+    - uses: actions/checkout@v2
+    - uses: akirak/elinter@v4
